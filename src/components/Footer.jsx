@@ -6,7 +6,7 @@ function Footer() {
         <>
             <footer>
                 <div>
-                    <Link to="/painting-equipment-react-store/"><img height={24} src="img/logo.svg" alt="Коробка" /></Link>
+                    <Link to="/"><img height={24} src="img/logo.svg" alt="Коробка" /></Link>
                 </div>
                 <nav>
                     <ul>
