@@ -1,0 +1,97 @@
+.Cell {
+    margin: 10px;
+    padding: 5px;
+    min-height: 327px;
+    width: 220px;
+    border: solid 5px black;
+
+    transition: all 0.3s ease;
+
+    img {
+        cursor: pointer;
+        transition: all 0.3s ease;
+
+        &:hover {
+            transform: scale(1.05);
+        }
+    }
+
+    p {
+        font-weight: 500;
+        margin: 0 0 15px 0;
+    }
+
+    &:hover {
+        box-shadow:
+            1px 1px #000000,
+            2px 2px #000000,
+            3px 3px #000000,
+            4px 4px #000000,
+            5px 5px #000000;
+        -webkit-transform: translateX(-3px);
+        transform: translateX(-3px);
+    }
+}
+
+.imgWrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.price {
+    margin: 10px 0 5px 0;
+    padding: 0 10px 0 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    p {
+        font-weight: bold;
+        font-size: 24px;
+        margin: 10px 0;
+    }
+}
+
+button {
+    cursor: pointer;
+    font-weight: 600;
+    padding: 0;
+    font-size: 28px;
+    width: 40px;
+    height: 40px;
+    color: white;
+    background: black;
+    border: none;
+    outline: solid 5px black;
+    transition: all 0.3s ease;
+}
+
+.addCart {
+    box-shadow: inset 0 0 0 4px white;
+
+    &:hover {
+        font-size: 32px;
+        color: black;
+        border-radius: 25%;
+        box-shadow: inset 0 0 0 20px white;
+        transform: scale(1.1) rotate(180deg);
+    }
+}
+
+.addCartChecked {
+    font-size: 32px;
+    border-radius: 50%;
+    box-shadow: inset 0 0 0 20px white;
+    color: black;
+
+    &:hover {
+        font-size: 26px;
+        color: white;
+        border-radius: 50%;
+        box-shadow: inset 0 0 0 4px white;
+        outline-color: black;
+        transform: scale(1.05);
+    }
+}

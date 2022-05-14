@@ -1,0 +1,148 @@
+.cartBG {
+    z-index: 10;
+    position: fixed;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cartWindow {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 12px 20px;
+    min-width: 635px;
+    max-height: 75%;
+    background: white;
+    box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.4);
+
+    h1 {
+        margin: 10px 0 20px 0;
+    }
+
+    h2 {
+        margin: 0;
+    }
+}
+
+.cartTopBottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 10px;
+
+    p {
+        cursor: pointer;
+        margin: 0;
+        height: 40px;
+        font-weight: 600;
+        font-size: 28px;
+        opacity: 1;
+        transition: all 0.3s ease;
+
+        &:hover {
+            transform: scale(1.2);
+            opacity: 0.8;
+        }
+    }
+
+    li {
+        display: block;
+        padding: 0;
+        font-weight: 500;
+    }
+
+    button {
+        font-size: 16px;
+        width: 160px;
+        box-shadow: inset 0 0 0 4px white;
+
+        &:hover {
+            transform: scale(1.05);
+            color: black;
+            box-shadow: inset 0 0 0 20px white;
+        }
+    }
+}
+
+.itemCount {
+    p {
+        transition: all .2s ease;
+        text-align: center;
+        margin: 0;
+        padding: 2px;
+        font-weight: 600;
+        font-size: 18px;
+    }
+
+    .countChange {
+        cursor: pointer;
+        height: 25px;
+        width: 25px;
+        border: 3px solid black;
+
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
+}
+
+.delete {
+    cursor: pointer;
+    height: 30px;
+    padding: 0 15px;
+    transition: all 0.3s ease;
+
+    &:hover {
+        transform: scale(1.1);
+        filter: invert(50%) sepia(100%) saturate(1000%) hue-rotate(-40deg) brightness(80%) contrast(90%);
+    }
+}
+
+.items {
+    overflow: auto;
+    margin-bottom: 20px;
+}
+
+.cartItem {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px;
+    height: 100px;
+    border: 3px black solid;
+    margin-bottom: 10px;
+
+    p {
+        font-weight: 500;
+        margin: 0 0 15px 0;
+    }
+
+    h6 {
+        font-weight: normal;
+        margin: 10px 0 0 0;
+        font-size: 16px;
+    }
+}
+
+.imgWrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin-right: 5px;
+    padding-right: 5px;
+    height: 100px;
+    width: 100px;
+
+    transition: all 0.3s ease;
+
+    &:hover {
+        transform: scale(1.1);
+    }
+}
