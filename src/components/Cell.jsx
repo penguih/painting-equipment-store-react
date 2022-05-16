@@ -35,8 +35,8 @@ function Cell({ id, title, cost, imgUrl, handleClickAdd }) {
                     <p>{title}</p>
                     <div className={styles.price}>
                         <p>{cost} грн.</p>
-                        <button className={isItemAdded(id) ? styles.addCart : styles.addCartChecked}
-                            onClick={addCartClick}>{isItemAdded(id) ? '+' : '🗸'}</button>
+                        {handleClickAdd && <button className={isItemAdded(id) ? styles.addCart : styles.addCartChecked}
+                            onClick={addCartClick}>{isItemAdded(id) ? '+' : '🗸'}</button>}
                     </div>
 
                 </>}

@@ -1,10 +1,22 @@
 import React from 'react';
+import axios from 'axios';
 import './Order.scss';
 import { useForm } from "react-hook-form";
 import { useCart } from '../hooks/useCart';
 
-function Order() {
+function Order({ setAddCart }) {
     const { addCart, cartCost } = useCart();
+
+    const onSendData = async (inputData) => {
+        try {
+            const orderData = await axios.post('https://62792bd2d00bded55ae56077.mockapi.io/orders', { orderItems: addCart, userData: inputData });
+            console.log(orderData.data)
+            alert('Ваш заказ успешно оформлен!\n' + JSON.stringify(orderData.data));
+        } catch (error) {
+            alert('Не удалось создать заказ :(');
+            console.error(error);
+        }
+    };
 
     const {
         register,
@@ -14,11 +26,9 @@ function Order() {
     } = useForm({ mode: "onBlur" });
 
     const onSubmit = (data) => {
-        let allData = [data].concat(addCart)
-        allData[0].cartCost = cartCost;
-        allData[0].deliveryCost = (cartCost / 100 * 2 + 20);
-        alert(JSON.stringify(allData))
-        console.log(allData)
+        onSendData(data);
+        setAddCart([]);
+        localStorage.setItem('Cart', JSON.stringify([]));
         reset();
     }
 
@@ -29,7 +39,7 @@ function Order() {
                 <div className='inputForm'>
 
                     <h2>Имя:</h2>
-                    <input placeholder="*Иван" required {...register('firstName')} />
+                    <input placeholder="*Тарас" required {...register('firstName')} />
 
                     <h2>Фамилия:</h2>
                     <input placeholder="*Иванов" required {...register('lastName')} />
@@ -51,7 +61,6 @@ function Order() {
                     <h2>Комментарий к заказу:</h2>
                     <textarea placeholder="Ваши пожелания" {...register('comment')} />
 
-
                 </div>
                 <div className='rightSide'>
                     <div className='cardWrap'>
@@ -71,7 +80,7 @@ function Order() {
                             </>
                             : <>
                                 <img className='emptyCart' src="img\emptyCart.png" alt="emptyCart" />
-                                <h1 > Ваша корзина пуста...</h1>
+                                <h1> Ваша корзина пуста...</h1>
                             </>}
                     </div>
 
@@ -79,7 +88,7 @@ function Order() {
                     <p>Цена доставки: {cartCost / 100 * 2 + 20} грн.</p>
                     <p><span>Итого: {cartCost + (cartCost / 100 * 2 + 20)} грн.</span></p>
 
-                    <button >Подтвердить заказ</button>
+                    <button>Подтвердить заказ</button>
                 </div>
             </form>
         </>

@@ -10,6 +10,7 @@ import CartWindow from './components/CartWindow';
 import Main from './pages/Main';
 import Delivery from './pages/Delivery';
 import Order from './pages/Order';
+import LastOrders from './pages/LastOrders';
 
 let tempLS = []; //масив для додавання товару до корзини
 function App() {
@@ -97,7 +98,8 @@ function App() {
               onAddToCart={onAddToCart}
             />} />
             <Route exact path='/delivery/' element={<Delivery />} />
-            <Route exact path='/order/' element={<Order cartItems={addCart} />} />
+            <Route exact path='/order/' element={<Order setAddCart={setAddCart} />} />
+            <Route exact path='/last-orders/' element={<LastOrders />} />
             <Route path='*' element={<h1 style={{ margin: '50px 0 600px 0' }}>404 not found<br /><br />Страница не найдена</h1>} />
           </Routes>
         </div>
