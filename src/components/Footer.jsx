@@ -10,8 +10,8 @@ function Footer() {
                 </div>
                 <nav>
                     <ul>
-                        <li><Link to="delivery">Доставка и оплата</Link></li>
-                        <li><Link to="last-orders">Последние заказы</Link></li>
+                        <li><Link to="/delivery/">Доставка и оплата</Link></li>
+                        <li><Link to="/recent-orders/">Последние заказы</Link></li>
                         <li><a href="https://t.me/Jabka" target="_blank" rel="noreferrer"><img src="img/Telegram.svg" alt="telegram" /></a></li>
                         <li><a href="https://t.me/Jabka" target="_blank" rel="noreferrer"><img src="img/Viber.svg" alt="viber" /></a></li>
                     </ul>
