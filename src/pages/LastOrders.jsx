@@ -10,7 +10,7 @@ function LastOrders() {
         (async () => {
             try {
                 const { data } = await axios.get('https://62792bd2d00bded55ae56077.mockapi.io/orders');
-                setOrdersList(data.reduce((prev, obj) => [...prev, ...obj.orderItems], []));
+                setOrdersList(data.reduce((prev, obj) => [...prev, ...obj.orderItems], []).reverse());
             } catch (error) {
                 alert('Ошибка при запросе списка заказов :(');
                 console.error(error);
