@@ -1,4 +1,3 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 import styles from './CartWindow.module.scss'
 import { useCart } from '../hooks/useCart';
@@ -33,8 +32,7 @@ function CartWindow({ onRemove, onClickCart }) {
                         </div>
                         <div className={styles.cartTopBottom}>
                             <ul>
-                                <li>Стоимость товаров: {cartCost}</li>
-                                <li>Цена доставки: {cartCost / 100 * 2 + 20} грн.</li>
+                                <li>Цена доставки: {Math.round(cartCost / 100 * 2 + 20)} грн.</li>
                             </ul>
                             <Link to="/order" onClick={onClickCart}><button>Оформить заказ</button></Link>
                         </div>

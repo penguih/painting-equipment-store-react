@@ -42,7 +42,7 @@ function Order({ setAddCart }) {
                     <input placeholder="*Тарас" required {...register('firstName')} />
 
                     <h2>Фамилия:</h2>
-                    <input placeholder="*Иванов" required {...register('lastName')} />
+                    <input placeholder="*Шевченко" required {...register('lastName')} />
 
                     <h2>Телефон:</h2>
                     <input placeholder="+38(095)123-45-67" required
@@ -85,8 +85,8 @@ function Order({ setAddCart }) {
                     </div>
 
                     <p>Стоимость товаров: {cartCost} грн.</p>
-                    <p>Цена доставки: {cartCost / 100 * 2 + 20} грн.</p>
-                    <p><span>Итого: {cartCost + (cartCost / 100 * 2 + 20)} грн.</span></p>
+                    <p>Цена доставки: {Math.round(cartCost / 100 * 2 + 20)} грн.</p>
+                    <p><span>Итого: {cartCost + Math.round(cartCost / 100 * 2 + 20)} грн.</span></p>
 
                     <button>Подтвердить заказ</button>
                 </div>

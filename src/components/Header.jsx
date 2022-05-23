@@ -19,8 +19,8 @@ function Header({ onClickCart, onChangeSearch, searchInput, findItemMenu, clearS
                 <nav>
                     <ul>
                         <Routes>
-                            <Route exact path='/delivery/' element={<li><Link to="/">Главная</Link></li>} />
-                            <Route exact path='/order/' element={<li><Link to="/">Главная</Link></li>} />
+                            <Route exact path='delivery' element={<li><Link to="/">Главная</Link></li>} />
+                            <Route exact path='order' element={<li><Link to="/">Главная</Link></li>} />
                             <Route path='*' element={<li><Link to="/">Главная</Link></li>} />
                             <Route exact path="/" element={ // увімкнути пошук тільки на головній сторінці
                                 <li><div className='d-flex'>
@@ -33,7 +33,6 @@ function Header({ onClickCart, onChangeSearch, searchInput, findItemMenu, clearS
                         </Routes>
                         <li><Link to="delivery">Доставка и оплата</Link></li>
                     </ul>
-
                 </nav>
 
                 <div className={styles.cart} onClick={onClickCart}>

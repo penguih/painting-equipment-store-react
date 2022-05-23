@@ -97,9 +97,9 @@ function App() {
               airbrush={airbrush}
               onAddToCart={onAddToCart}
             />} />
-            <Route exact path='/delivery/' element={<Delivery />} />
-            <Route exact path='/order/' element={<Order setAddCart={setAddCart} />} />
-            <Route exact path='/recent-orders/' element={<RecentOrders />} />
+            <Route exact path='delivery' element={<Delivery />} />
+            <Route exact path='order' element={<Order setAddCart={setAddCart} />} />
+            <Route exact path='recent-orders' element={<RecentOrders />} />
             <Route path='*' element={<h1 style={{ margin: '50px 0 600px 0' }}>404 not found<br /><br />Страница не найдена</h1>} />
           </Routes>
         </div>
