@@ -25,7 +25,7 @@ function RecentOrders() {
         <>
             <h1>Последние заказы всех пользователей</h1>
             <div className="disFlex">
-                {(loadingReady ? [Array(10).fill({})]
+                {(loadingReady ? [...Array(10)]
                     : ordersList).map((obj, index) => (
                         <Cell
                             key={index}
