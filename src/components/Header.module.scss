@@ -47,15 +47,19 @@ header {
     }
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1124px) {
     header {
         padding: 0 10px;
     }
 }
 
-@media screen and (max-width: 890px) {
+@media screen and (max-width: 970px) {
     header {
         height: 80px;
+
+        nav {
+            padding: 0 50px;
+        }
     }
 }
 
@@ -97,6 +101,7 @@ li {
     display: flex;
     align-items: center;
     padding: 4px;
+    // height: 30px;
     min-height: 30px;
     max-height: 40px;
     box-shadow: 0 0 0 0 black;

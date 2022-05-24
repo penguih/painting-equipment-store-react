@@ -9,6 +9,7 @@ import CartWindow from './components/CartWindow';
 
 import Main from './pages/Main';
 import Delivery from './pages/Delivery';
+import About from './pages/About';
 import Order from './pages/Order';
 import RecentOrders from './pages/RecentOrders';
 
@@ -27,7 +28,7 @@ function App() {
       try {
         setLoadingReady(true);
 
-        const itemsResponse = await axios.get('https://62792bd2d00bded55ae56077.mockapi.io/airbrush');
+        const itemsResponse = await axios.get(`https://62792bd2d00bded55ae56077.mockapi.io/airbrush`);
 
         setLoadingReady(false);
         setAirbrush(itemsResponse.data);
@@ -88,7 +89,7 @@ function App() {
       <StoreContext.Provider value={{ addCart, loadingReady, isItemAdded }}>
         {openCart && < CartWindow onClickCart={() => setOpenCart(false)} onRemove={onRemoveCart} /> /*відкриття корзини, додавання в корзину*/}
 
-        <Header onClickCart={() => setOpenCart(true)} onChangeSearch={onChangeSearch} searchInput={searchInput} findItemMenu={findItemMenu} clearSearch={() => setSearchInput('')} />
+        <Header onClickCart={() => setOpenCart(true)} onChangeSearch={onChangeSearch} searchInput={searchInput} clearSearch={() => setSearchInput('')} />
         <div className='container'>
 
           <Routes>
@@ -96,8 +97,11 @@ function App() {
               searchInput={searchInput}
               airbrush={airbrush}
               onAddToCart={onAddToCart}
+              findItemMenu={findItemMenu}
+              setAirbrush={setAirbrush}
             />} />
             <Route exact path='delivery' element={<Delivery />} />
+            <Route exact path='about' element={<About />} />
             <Route exact path='order' element={<Order setAddCart={setAddCart} />} />
             <Route exact path='recent-orders' element={<RecentOrders />} />
             <Route path='*' element={<h1 style={{ margin: '50px 0 600px 0' }}>404 not found<br /><br />Страница не найдена</h1>} />

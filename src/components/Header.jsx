@@ -3,12 +3,8 @@ import { Routes, Route, Link } from 'react-router-dom';
 import styles from './Header.module.scss';
 import { useCart } from '../hooks/useCart';
 
-function Header({ onClickCart, onChangeSearch, searchInput, findItemMenu, clearSearch }) {
+function Header({ onClickCart, onChangeSearch, searchInput, clearSearch }) {
     const { addCart, cartCost } = useCart();
-
-    const [focused, setFocused] = React.useState(false) //для отображения предложений во время поиска
-    const onFocus = () => setFocused(true)
-    const onBlur = () => setTimeout(() => { setFocused(false) }, 100);
 
     return (
         <>
@@ -26,12 +22,13 @@ function Header({ onClickCart, onChangeSearch, searchInput, findItemMenu, clearS
                                 <li><div className='d-flex'>
                                     <div className={styles.search}>
                                         <img height={18} src="img\search.svg" alt="search" />
-                                        <input onChange={onChangeSearch} placeholder='Поиск...' value={searchInput} onFocus={onFocus} onBlur={onBlur} />
+                                        <input onChange={onChangeSearch} placeholder='Поиск...' value={searchInput} />
                                         {searchInput && <p className={styles.searchClear} onClick={clearSearch}>✖</p>}
                                     </div>
                                 </div></li>} />
                         </Routes>
                         <li><Link to="delivery">Доставка и оплата</Link></li>
+                        <li><Link to="about">О нас</Link></li>
                     </ul>
                 </nav>
 
@@ -41,13 +38,6 @@ function Header({ onClickCart, onChangeSearch, searchInput, findItemMenu, clearS
                     <p>{cartCost} грн.</p>
                 </div>
             </header>
-            {focused && //варіанти для пошуку
-                <div className={styles.helpSearch}>
-                    <p onClick={() => findItemMenu("Sata")}>Sata</p>
-                    <p onClick={() => findItemMenu("DeVILBISS")}>DeVILBISS</p>
-                    <p onClick={() => findItemMenu("LVLP")}>LVLP</p>
-                    <p onClick={() => findItemMenu("HVLP")}>HVLP</p>
-                </div>}
         </>
     );
 }
