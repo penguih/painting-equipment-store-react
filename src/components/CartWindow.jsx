@@ -32,6 +32,7 @@ function CartWindow({ onRemove, onClickCart }) {
                         </div>
                         <div className={styles.cartTopBottom}>
                             <ul>
+                                <li>Стоимость товаров: {cartCost} грн.</li>
                                 <li>Цена доставки: {Math.round(cartCost / 100 * 2 + 20)} грн.</li>
                             </ul>
                             <Link to="/order" onClick={onClickCart}><button>Оформить заказ</button></Link>

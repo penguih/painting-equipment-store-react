@@ -22,16 +22,16 @@ function Delivery() {
         <div className="about">
 
             <h1>Контакты отдела продаж интернет-магазина:</h1>
-            <p>+38(095) 277-13-19 &emsp;
-                <a href="https://t.me/Jabka" target="_blank" rel="noreferrer">Telegram</a> &emsp;(с 10:00 до 18:00 по будням)<br></br><br></br>
-                Согласно действующему законодательству Украины, подлежит возврату и обмену в течение 14 дней.<br></br><br></br>
+            <p>Контактный номер: +38(095) 277-13-19  &emsp;(с 10:00 до 18:00 по будням)<br /><br />
+                <a href="https://t.me/Jabka" target="_blank" rel="noreferrer"><img src="img/Telegram.svg" alt="telegram" /> Мы в Telegram</a> <br /><br />
+                Согласно действующему законодательству Украины, подлежит возврату и обмену в течение 14 дней.<br /><br />
                 ПОСТАНОВА КАБІНЕТУ МІНІСТРІВ УКРАЇНИ від 19 березня 1994 р. N 172 "Про реалізацію окремих положень Закону України
                 "Про захист прав споживачів".</p>
 
             <h1>Напишите нам:</h1>
             <form ref={form} onSubmit={sendEmail} className="contactUs" >
                 <input name="name" placeholder="Имя" />
-                <input name="email" type='email' placeholder="Почтовый адрес" />
+                <input name="email" type='email' placeholder="Почтовый адрес (email)" />
                 <textarea name="message" placeholder="Ваше сообщение" />
                 <button>Отправить сообщение</button>
             </form>
