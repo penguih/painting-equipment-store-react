@@ -34,6 +34,7 @@ function Main({ searchInput, airbrush, onAddToCart, findItemMenu, setAirbrush })
         <>
             <div className='Filters'>
                 <ul className='sortItems'>
+                    <li onClick={() => findItemMenu("")}>Все</li>
                     <li onClick={() => findItemMenu("Sata")}>Sata</li>
                     <li onClick={() => findItemMenu("DeVILBISS")}>DeVILBISS</li>
                     <li onClick={() => findItemMenu("LVLP")}>LVLP</li>
