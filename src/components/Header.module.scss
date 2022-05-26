@@ -58,7 +58,7 @@ header {
         height: 80px;
 
         nav {
-            padding: 0 60px;
+            padding: 0 65px;
         }
     }
 }
@@ -101,6 +101,14 @@ li {
         border: 0;
         box-sizing: border-box;
         outline: none;
+
+        &:hover {
+            border: 0;
+        }
+
+        &:focus {
+            border: 0;
+        }
     }
 }
 
