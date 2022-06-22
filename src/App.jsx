@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Link } from 'react-router-dom';
 import StoreContext from './hooks/useContext';
 
 import Header from './components/Header';
@@ -103,7 +103,12 @@ function App() {
             <Route exact path='about' element={<About />} />
             <Route exact path='order' element={<Order setAddCart={setAddCart} />} />
             <Route exact path='recent-orders' element={<RecentOrders />} />
-            <Route path='*' element={<h1 style={{ margin: '50px 0 600px 0' }}>404 not found<br /><br />Страница не найдена</h1>} />
+            <Route path='*' element={<div className='notFound'>
+              <img src="img\notFound_404.gif" alt="404 not found" />
+              <h1>404 error<br />Страница не найдена</h1>
+              <Link to="/">❮ Перейти на главную</Link>
+            </div>
+            } />
           </Routes>
         </div>
         <Footer />

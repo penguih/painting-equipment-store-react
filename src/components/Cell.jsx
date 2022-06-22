@@ -6,22 +6,13 @@ import StoreContext from '../hooks/useContext';
 function Cell({ id, title, cost, injector, tank, imgUrl, handleClickAdd }) {
     const { loadingReady, isItemAdded } = React.useContext(StoreContext);
     // isItemAdded - зміна стилю та тексту кнопки при додаванні до корзини, змінення на сторінці та в корзині
-    const [showFeature, setShowFeature] = React.useState(false);
 
     const addCartClick = () => {
         handleClickAdd({ id, title, cost, imgUrl });
-        // handleClickAdd({ id, title, cost, injector, tank, imgUrl });
-    }
-
-    const onFocus = () => {
-        setShowFeature(true)
-    }
-    const onBlur = () => {
-        setShowFeature(false)
     }
 
     return (
-        <div className={styles.Cell} onMouseEnter={onFocus} onMouseLeave={onBlur}>
+        <div className={styles.Cell}>
             {loadingReady ? //якщо товари з БД не завантажилась то відображати пусті картки
                 <ContentLoader
                     speed={3}
@@ -43,14 +34,11 @@ function Cell({ id, title, cost, injector, tank, imgUrl, handleClickAdd }) {
                     </div>
                     <h4>{title}</h4>
 
-                    {/* {showFeature && <> */}
-
-                    <div className={styles.Feature}>
-                        <p>Форсунки: {injector} мм.</p>
-                        <p>Бачок пластик: {tank} мл.</p>
-                    </div>
-
-                    {/* </>} */}
+                    {handleClickAdd &&
+                        <div className={styles.Feature}>
+                            <p>Форсунки: {injector} мм.</p>
+                            <p>Бачок пластик: {tank} мл.</p>
+                        </div>}
 
                     <div className={styles.price}>
                         <p>{cost} грн.</p>
