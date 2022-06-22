@@ -7,10 +7,9 @@ function About() {
 
     const sendEmail = (e) => {
         e.preventDefault();
-
         emailjs.sendForm('service_hangal9', 'template_4lxgeci', form.current, 'To8UwZDUHt8iKaYbP')
             .then((result) => {
-                // console.log(result.text);
+                console.log(result.text);
                 alert('Ваше сообщение отправлено!')
             }, (error) => {
                 alert('Ошибка при отправке сообщения:(')
@@ -31,7 +30,6 @@ function About() {
             <h1>Контакты отдела продаж интернет-магазина:</h1>
             <p><b>Контактный номер:</b> +38(095) 277-13-19&emsp;  <br />(с 10:00 до 18:00 по будням)<br /></p>
             <a href="https://t.me/Jabka" target="_blank" rel="noreferrer"><img src="img/Telegram.svg" alt="telegram" /> Мы в Telegram</a> <br />
-
 
             <h1>Напишите нам:</h1>
             <form ref={form} onSubmit={sendEmail} className="contactUs" >

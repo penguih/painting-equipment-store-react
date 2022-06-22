@@ -13,7 +13,7 @@ import About from './pages/About';
 import Order from './pages/Order';
 import RecentOrders from './pages/RecentOrders';
 
-let tempLS = []; //масив для додавання товару до корзини
+let tempLS = []; //масив для додавання товару до корзини 
 function App() {
 
   const [addCart, setAddCart] = React.useState([]); //список всіх товарів в корзині, також для додавання товару в корзину
@@ -91,7 +91,6 @@ function App() {
 
         <Header onClickCart={() => setOpenCart(true)} onChangeSearch={onChangeSearch} searchInput={searchInput} clearSearch={() => setSearchInput('')} />
         <div className='container'>
-
           <Routes>
             <Route exact path="/" element={<Main
               searchInput={searchInput}

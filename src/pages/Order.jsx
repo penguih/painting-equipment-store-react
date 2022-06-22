@@ -11,7 +11,8 @@ function Order({ setAddCart }) {
         try {
             const orderData = await axios.post('https://62792bd2d00bded55ae56077.mockapi.io/orders', { orderItems: addCart, userData: inputData });
             console.log(orderData.data)
-            alert('Ваш заказ успешно оформлен!\n' + JSON.stringify(orderData.data));
+            // alert('Ваш заказ успешно оформлен!\n' + JSON.stringify(orderData.data));
+            alert('Ваш заказ успешно оформлен!\n');
         } catch (error) {
             alert('Не удалось создать заказ :(');
             console.error(error);

@@ -9,9 +9,9 @@ function Header({ onClickCart, onChangeSearch, searchInput, clearSearch }) {
     return (
         <>
             <header>
-                <div>
+                <>
                     <Link to="/"><img height={24} src="img\logo.svg" alt="Коробка" /></Link>
-                </div>
+                </>
                 <nav>
                     <ul>
                         <Routes>
