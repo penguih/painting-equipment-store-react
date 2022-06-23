@@ -8,7 +8,7 @@ function Cell({ id, title, cost, injector, tank, imgUrl, handleClickAdd }) {
     // isItemAdded - зміна стилю та тексту кнопки при додаванні до корзини, змінення на сторінці та в корзині
 
     const addCartClick = () => {
-        handleClickAdd({ id, title, cost, imgUrl });
+        handleClickAdd({ id, title, cost, injector, tank, imgUrl });
     }
 
     return (
@@ -22,11 +22,11 @@ function Cell({ id, title, cost, injector, tank, imgUrl, handleClickAdd }) {
                     backgroundColor="#C0C0C0"
                     foregroundColor="#F2F2F2"
                 >
-                    <rect x="10" y="10" rx="0" ry="0" width="200" height="200" />
-                    <rect x="5" y="220" rx="0" ry="0" width="210" height="20" />
-                    <rect x="5" y="245" rx="0" ry="0" width="180" height="20" />
-                    <rect x="5" y="290" rx="0" ry="0" width="130" height="28" />
-                    <rect x="164" y="278" rx="0" ry="0" width="50" height="50" />
+                    <rect x="10" y="5" rx="0" ry="0" width="200" height="200" />
+                    <rect x="5" y="210" rx="0" ry="0" width="210" height="20" />
+                    <rect x="5" y="235" rx="0" ry="0" width="180" height="20" />
+                    <rect x="5" y="277" rx="0" ry="0" width="130" height="28" />
+                    <rect x="164" y="265" rx="0" ry="0" width="50" height="50" />
                 </ContentLoader>
                 : <>
                     <div className={styles.imgWrap}>
@@ -34,11 +34,10 @@ function Cell({ id, title, cost, injector, tank, imgUrl, handleClickAdd }) {
                     </div>
                     <h4>{title}</h4>
 
-                    {handleClickAdd &&
-                        <div className={styles.Feature}>
-                            <p>Форсунки: {injector} мм.</p>
-                            <p>Бачок пластик: {tank} мл.</p>
-                        </div>}
+                    <div className={styles.Feature}>
+                        <p>Форсунки: {injector} мм.</p>
+                        <p>Бачок пластик: {tank} мл.</p>
+                    </div>
 
                     <div className={styles.price}>
                         <p>{cost} грн.</p>

@@ -1,8 +1,8 @@
 {
-  "name": "painting-equipment-store",
+  "name": "painting-equipment-store-react",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://penguih.github.io/",
+  "homepage": "https://penguih.github.io/painting-equipment-store-react",
   "dependencies": {
     "@emailjs/browser": "^3.6.2",
     "@testing-library/jest-dom": "^5.16.4",
