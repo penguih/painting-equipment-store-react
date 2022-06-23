@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/painting-equipment-store-react/static/css/main.5fd13284.css",
-    "main.js": "/painting-equipment-store-react/static/js/main.962fc40e.js",
+    "main.js": "/painting-equipment-store-react/static/js/main.242380e7.js",
     "index.html": "/painting-equipment-store-react/index.html",
     "main.5fd13284.css.map": "/painting-equipment-store-react/static/css/main.5fd13284.css.map",
-    "main.962fc40e.js.map": "/painting-equipment-store-react/static/js/main.962fc40e.js.map"
+    "main.242380e7.js.map": "/painting-equipment-store-react/static/js/main.242380e7.js.map"
   },
   "entrypoints": [
     "static/css/main.5fd13284.css",
-    "static/js/main.962fc40e.js"
+    "static/js/main.242380e7.js"
   ]
 }
